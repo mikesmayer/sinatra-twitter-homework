@@ -1,0 +1,14 @@
+<ul>
+<% @my_tweets.each do |tweet| %>
+<li><%=  tweet[:text] %></li>
+<% unless tweet[:media].empty? %>
+img src = ",%=tweet[media"
+<% end %>
+</ul>
+
+<h1>see another user's tweets?</h1>
+
+<form action="/tweets" method="get">
+  <input type="text" name="username" autofocus>
+  <button>GO</button>
+</form>

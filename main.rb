@@ -38,6 +38,17 @@ configure do
   end
 end
 
+get '/' do
+    # This gets the username from the params hash
+    if @username = params[:username]
+    redirect to ("/tweets/#{@username}")
+  else
+    "Not a valide username"
+  end
+
+  erb :home
+end
+
 get '/tweets/:username' do
   # This gets the username from the params hash
   @username = params[:username]
@@ -53,3 +64,4 @@ get '/tweets/:username' do
 
   erb :tweets
 end
+
